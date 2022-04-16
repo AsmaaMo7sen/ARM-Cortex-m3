@@ -5,7 +5,7 @@
  * Description : this file contains logical implementation of functions
  */
 
-/****************************Includes*****************************/
+/****************************Includes******************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
@@ -27,15 +27,15 @@ void _7SEG_voidDisplayNumber(u8 COPY_u8Type , u8 COPY_u8Port , u8 COPY_u8Number)
 		case COMMON_CATHOD :
 
 
-			    	/*setting target value to pins to display the number*/
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN0 , GET_BIT(COPY_u8Number , 0));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN1 , GET_BIT(COPY_u8Number , 1));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN2 , GET_BIT(COPY_u8Number , 2));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN3 , GET_BIT(COPY_u8Number , 3));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN4 , GET_BIT(COPY_u8Number , 4));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN5 , GET_BIT(COPY_u8Number , 5));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN6 , GET_BIT(COPY_u8Number , 6));
-					GPIO_voidSetOutputPinValue(COPY_u8Port , GPIO_PIN7 , GET_BIT(COPY_u8Number , 7));
+			/*setting target value to pins to display the number*/
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_A ,(GET_BIT(COPY_u8Number , 0)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_B ,(GET_BIT(COPY_u8Number , 1)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_C ,(GET_BIT(COPY_u8Number , 2)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_D ,(GET_BIT(COPY_u8Number , 3)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_E ,(GET_BIT(COPY_u8Number , 4)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_F ,(GET_BIT(COPY_u8Number , 5)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_G ,(GET_BIT(COPY_u8Number , 6)));
+					GPIO_voidSetOutputPinValue(COPY_u8Port , _7SEG_PIN_DOT ,(GET_BIT(COPY_u8Number , 7)));
 
 				/*break from case of common anode*/
 				break;
