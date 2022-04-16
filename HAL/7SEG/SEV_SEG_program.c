@@ -5,7 +5,7 @@
  * Description : this file contains logical implementation of functions
  */
 
-/****************************Includes******************************/
+/****************************Includes*****************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
