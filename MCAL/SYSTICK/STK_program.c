@@ -131,5 +131,11 @@ u32 STK_u32GetEllapsedTime(void)
 	return LOCAL_u32EllapsedTime ;
 }
 
+/*Systick ISR*/
+void SysTick_Handler(void)
+{
+	CallBack();
+}
+
 
 
