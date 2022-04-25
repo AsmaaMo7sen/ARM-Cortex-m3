@@ -41,6 +41,9 @@ void STK_voidInit()
 void STK_voidSetBusyWait(u32 COPY_u32Ticks )
 {
 
+	SYSTICK -> LOAD = 0 ; //resetting load register to receive new values
+	SYSTICK -> VAL  = 0 ; //resetting value register to receive new values
+
 	SYSTICK -> LOAD = COPY_u32Ticks ; //assinging target ticks to load register
 	SET_BIT( SYSTICK -> CTRL , 0) ;   //enabling systick to start counting
 	while(GET_BIT(SYSTICK->CTRL ,16)==0); //polling in this loop until counting is over and flag is raised
@@ -51,6 +54,10 @@ void STK_voidSetBusyWait(u32 COPY_u32Ticks )
 
 void STK_voidSetIntervalSingle(u32 COPY_u32Ticks , void (*ptr)(void))
 {
+
+	SYSTICK -> LOAD = 0 ; //resetting load register to receive new values
+	SYSTICK -> VAL  = 0 ; //resetting value register to receive new values
+
     SYSTICK->LOAD = COPY_u32Ticks ;  //assigning target ticks to load register
     SET_BIT(SYSTICK->CTRL , 0 );     //enabling systick to start counting
     SET_BIT(SYSTICK->CTRL , 1 );     //enabling underflow interrupt
@@ -71,6 +78,9 @@ void STK_voidSetIntervalSingle(u32 COPY_u32Ticks , void (*ptr)(void))
 
 void STK_voidSetIntervalPeriodic(u32 COPY_u32Ticks , void (*ptr)(void))
 {
+
+	SYSTICK -> LOAD = 0 ; //resetting load register to receive new values
+	SYSTICK -> VAL  = 0 ; //resetting value register to receive new values
 
       while(1)
       {
@@ -96,8 +106,6 @@ void STK_voidStopSystick(void)
 {
 	CLR_BIT( SYSTICK -> CTRL , 0) ; //clearing this bit to disable systick
 
-	SYSTICK -> LOAD = 0 ; //resetting load register to receive new values
-	SYSTICK -> VAL  = 0 ; //resetting value register to receive new values
 
 	/*return from this function*/
 	return ;
