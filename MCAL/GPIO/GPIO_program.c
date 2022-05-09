@@ -10,7 +10,7 @@
 /*     Description :this file contains logical implementation of functions              */
 /****************************************************************************************/
 
-/*includes */
+/*includes*/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 #include "RCC_interface.h"
