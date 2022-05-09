@@ -17,7 +17,7 @@
 /**********************Global paremeters**********************/
 
 /*pointers responsible for call back*/
-void (*EXTI0_CallBack[16])(void)  ;
+void (*EXTI_CallBack[16])(void)  ;
 
 /**********************Functions' Definition*******************************/
 
