@@ -27,21 +27,19 @@
 #define NUMBER_9                     (0b01101111)
 #define DOT                          (0b10000000)
 
+/*7-segment status*/
+#define ENABLE       1
+#define DISABLE      0
 
-/*7-segment pins*/
-#define _7SEG_PIN_A                  (GPIO_PIN0)
-#define _7SEG_PIN_B                  (GPIO_PIN1)
-#define _7SEG_PIN_C                  (GPIO_PIN2)
-#define _7SEG_PIN_D                  (GPIO_PIN3)
-#define _7SEG_PIN_E                  (GPIO_PIN4)
-#define _7SEG_PIN_F                  (GPIO_PIN5)
-#define _7SEG_PIN_G                  (GPIO_PIN6)
-#define _7SEG_PIN_DOT                (GPIO_PIN7)
+
 
 
 /*******************************Functions' Prototypes********************************/
 
+/*this function is to initialize pin configuration for 7-segments*/
+void _7SEG_voidInit(void);
+
 /*this function is to display a certain number*/
-void _7SEG_voidDisplayNumber(u8 COPY_u8Type , u8 COPY_u8Port , u8 COPY_u8Number);
+void _7SEG_voidDisplayNumber(u8 COPY_u8Type , u8 COPY_u8SevenSeg , u8 COPY_u8Number);
 
 #endif
