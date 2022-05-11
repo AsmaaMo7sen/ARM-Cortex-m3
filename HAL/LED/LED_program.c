@@ -33,9 +33,10 @@ void LED_voidLedOff(u8 COPY_u8Port ,u8 COPY_u8Pin)
 	GPIO_voidSetOutputPinValue( COPY_u8Port , COPY_u8Pin , GPIO_LOW);
 }
 
-void LED_voidLedToggle(u8 COPY_u8Port , u8 COPY_u8Pin)
+void LED_voidLedToggle(u8 COPY_u8Port , u8 COPY_u8Pin , u32 COPY_u32time)
 {
 	GPIO_voidToggleLed(COPY_u8Port , COPY_u8Pin) ;
+	STK_voidSetBusyWait(COPY_u32time) ;
 }
 
 
