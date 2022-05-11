@@ -19,8 +19,8 @@ void LED_voidLedOn(u8 COPY_u8Port ,u8 COPY_u8Pin);
 /*this function is to power off a led connected to a certain pin*/
 void LED_voidLedOff(u8 COPY_u8Port ,u8 COPY_u8Pin);
 
-/*this function is to toggle a led connected to a certain pin*/
-void LED_voidLedToggle(u8 COPY_u8Port ,u8 COPY_u8Pin);
+/*this function is to toggle a led connected to a certain pin with delay in usec*/
+void LED_voidLedToggle(u8 COPY_u8Port ,u8 COPY_u8Pin ,u32 COPY_u32time);
 
 
 
